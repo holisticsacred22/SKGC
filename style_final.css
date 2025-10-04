@@ -203,6 +203,147 @@ body {
  border: 5px solid #fcfcfc
 }
 
+/*The right and left section of the  consulation fee and terms*/
+/* Main heading above both columns */
+/* Wrapper for heading + columns */
+/* ===================== Consultation Section ===================== */
+
+/* Container for both columns */
+.consultation-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Main heading above columns */
+.main-heading {
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #4B0082;
+  margin: 0 0 20px 0;      /* no extra top margin */
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+/* Sub-heading style matching main heading line */
+.sub-heading {
+  text-align: center;
+  color: #4B0082;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0 15px 0;
+  padding-bottom: 10px;       /* space for the line */
+  border-bottom: 2px solid #ddd; /* full width grey line */
+}
+
+
+.sub-heading::before {
+  content: "";
+  position: absolute;
+  top: 0; /* line sits at the top of the heading */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;       /* length of the line */
+  height: 3px;       /* thickness of the line */
+  background-color: #4B0082; /* same as heading color */
+  border-radius: 2px;
+}
+
+/* Left column button inherits the same style as .cla-cta */
+.left-column-btn {
+  text-decoration: none; /* removes underline */
+  width: 50%;            /* optional: keep 50% width */
+  margin: 20px auto 0;   /* center it */
+  display: block;
+}
+
+
+.left-column-btn:hover {
+  background-color: #1659a8;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+/* Container holding left and right columns */
+.consultation-terms-container {
+  display: flex;
+  flex-wrap: wrap;          /* allows stacking on smaller screens */
+  gap: 20px;
+  justify-content: space-between;
+  align-items: stretch;     /* ensures equal height columns */
+}
+
+/* Left & Right columns */
+.consultation-column,
+.terms-column {
+  flex: 1 1 400px;          /* responsive equal width */
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  background-color: #fafafa; /* same for both */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* Left column overrides (QR image) */
+.consultation-column .qr-image {
+  width: 100%;              /* match column width */
+  max-width: 350px;
+  height: auto;
+  margin: 20px auto 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Headings inside columns */
+.consultation-column h2,
+.terms-column h2 {
+  text-align: center;
+  color: #4B0082;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 22px;
+  margin: 0 0 15px 0;       /* consistent gap below heading */
+  line-height: 1.4;         /* ensures consistent spacing with text */
+}
+
+/* Paragraph text inside columns */
+.terms-column .txt p,
+.consultation-column p {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .consultation-terms-container {
+    flex-direction: column;
+  }
+  .consultation-column,
+  .terms-column {
+    width: 100%;
+  }
+}
+
+
+/* Responsive stacking */
+@media (max-width: 900px) {
+  .consultation-terms-container {
+    flex-direction: column;
+  }
+}
+
 /* Responsive Media Queries */
 @media (max-width: 768px) {
   .header {
